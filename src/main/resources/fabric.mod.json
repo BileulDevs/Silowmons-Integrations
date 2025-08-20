@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "silowmons_integrations",
+  "version": "${version}",
+  "name": "Silowmons Integrations",
+  "description": "A usefull tool for Silowmons Modpack",
+  "authors": [
+    "Darcosse"
+  ],
+  "license": "MIT License",
+  "icon": "assets/example/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.darcosse.silowmons_integrations.fabric.SilowmonsIntegrations"
+    ]
+  },
+  "depends": {
+    "minecraft": "1.21.1",
+    "cobblemon": ">=1.6.0"
+  }
+}

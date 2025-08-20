@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "mega_showdown:heartflame_mask"
+    },
+    "title": {
+      "translate": "advancement.root.title"
+    },
+    "description": {
+      "translate": "advancement.root.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/red_wool.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
