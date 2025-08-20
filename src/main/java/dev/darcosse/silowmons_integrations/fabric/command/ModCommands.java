@@ -5,6 +5,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import dev.darcosse.silowmons_integrations.fabric.SilowmonsIntegrations;
 import dev.darcosse.silowmons_integrations.fabric.util.PokedexRegionUtils;
+import dev.darcosse.silowmons_integrations.fabric.util.TrainerUtils;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
@@ -27,6 +28,13 @@ public class ModCommands {
                 .then(CommandManager.literal("reload")
                         .requires(source -> source.hasPermissionLevel(2))
                         .executes(SilowmonsIntegrationsCommands::reloadConfig))
+        );
+
+        dispatcher.register(CommandManager.literal("battletowertrainer")
+                .then(CommandManager.literal("random")
+                        .requires(source -> source.hasPermissionLevel(2))
+                        .executes(TrainerUtils::summonTrainer)
+                )
         );
 
         dispatcher.register(CommandManager.literal("silowmonsintegrations")
