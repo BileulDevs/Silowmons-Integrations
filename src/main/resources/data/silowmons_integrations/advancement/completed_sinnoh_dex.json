@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "id": "mega_showdown:rotom_catalogue"
+      "id": "mega_showdown:griseous_core"
     },
     "title": {
-      "translate": "advancement.silowmons_integrations.completed_johto_dex.title"
+      "translate": "advancement.silowmons_integrations.completed_sinnoh_dex.title"
     },
     "description": {
-      "translate": "advancement.silowmons_integrations.completed_johto_dex.description"
+      "translate": "advancement.silowmons_integrations.completed_sinnoh_dex.description"
     },
     "frame": "challenge",
     "show_toast": true,

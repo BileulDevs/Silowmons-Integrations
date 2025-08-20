@@ -1,18 +1,18 @@
 {
   "display": {
     "icon": {
-      "id": "mega_showdown:heartflame_mask"
+      "id": "mega_showdown:hearthflame_mask"
     },
     "title": {
-      "translate": "advancement.root.title"
+      "translate": "advancement.silowmons_integrations.root.title"
     },
     "description": {
-      "translate": "advancement.root.description"
+      "translate": "advancement.silowmons_integrations.root.description"
     },
-    "background": "minecraft:textures/gui/advancements/backgrounds/red_wool.png",
+    "background": "minecraft:textures/block/red_wool.png",
     "frame": "task",
-    "show_toast": false,
-    "announce_to_chat": false
+    "show_toast": true,
+    "announce_to_chat": true
   },
   "criteria": {
     "impossible": {

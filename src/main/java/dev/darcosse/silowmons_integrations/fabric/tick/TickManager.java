@@ -31,7 +31,6 @@ public class TickManager {
                     HandleScoreboard.setScoreboard(server, obj);
                 });
             }
-
         });
 
         SilowmonsIntegrations.LOGGER.info("[TickManager] Successfully loaded Tick Events");

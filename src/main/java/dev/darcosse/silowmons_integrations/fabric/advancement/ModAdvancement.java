@@ -1,7 +1,6 @@
 package dev.darcosse.silowmons_integrations.fabric.advancement;
 
 import dev.darcosse.silowmons_integrations.fabric.SilowmonsIntegrations;
-import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Identifier;
@@ -10,28 +9,28 @@ import net.minecraft.util.Identifier;
  * Enum représentant les différents achievements du mod
  */
 public enum ModAdvancement {
-    COMPLETED_JOHTO_DEX("completed_johto_dex", "Completed Johto Dex"),
-    COMPLETED_KANTO_DEX("completed_kanto_dex", "Completed Kanto Dex"),
-    COMPLETED_HOENN_DEX("completed_hoenn_dex", "Completed Hoenn Dex"),
-    COMPLETED_SINNOH_DEX("completed_sinnoh_dex", "Completed Sinnoh Dex"),
-    COMPLETED_UNOVA_DEX("completed_unova_dex", "Completed Unova Dex"),
-    COMPLETED_KALOS_DEX("completed_kalos_dex", "Completed Kalos Dex"),
-    COMPLETED_ALOLA_DEX("completed_alola_dex", "Completed Alola Dex"),
-    COMPLETED_GALAR_DEX("completed_galar_dex", "Completed Galar Dex"),
-    COMPLETED_PALDEA_DEX("completed_paldea_dex", "Completed Paldea Dex"),
-    COMPLETED_NATIONAL_DEX("complete_national_dex", "Complete National Dex");
+    ROOT("root", "Welcome to Silowmons", "root"),
 
-    private final String displayName;
+    COMPLETED_JOHTO_DEX("completed_johto_dex", "Completed Johto Dex", "johto"),
+    COMPLETED_KANTO_DEX("completed_kanto_dex", "Completed Kanto Dex", "kanto"),
+    COMPLETED_HOENN_DEX("completed_hoenn_dex", "Completed Hoenn Dex",  "hoenn"),
+    COMPLETED_SINNOH_DEX("completed_sinnoh_dex", "Completed Sinnoh Dex",  "sinnoh"),
+    COMPLETED_UNOVA_DEX("completed_unova_dex", "Completed Unova Dex", "unova"),
+    COMPLETED_KALOS_DEX("completed_kalos_dex", "Completed Kalos Dex", "kalos"),
+    COMPLETED_ALOLA_DEX("completed_alola_dex", "Completed Alola Dex",  "alola"),
+    COMPLETED_GALAR_DEX("completed_galar_dex", "Completed Galar Dex", "galar"),
+    COMPLETED_PALDEA_DEX("completed_paldea_dex", "Completed Paldea Dex", "paldea"),
+
+    COMPLETED_NATIONAL_DEX("completed_national_dex", "Complete National Dex", "national");
+
     private final Identifier identifier;
+    private final String key;
 
-    ModAdvancement(String path, String displayName) {
-        this.displayName = displayName;
+    ModAdvancement(String path, String displayName, String key) {
         this.identifier = Identifier.of(SilowmonsIntegrations.MOD_ID, path);
+        this.key = key;
     }
 
-    /**
-     * Retourne l'avancement associé à cette entrée, ou null s'il n'existe pas
-     */
     public AdvancementEntry getAdvancement(MinecraftServer server) {
         return getAdvancement(server, this.identifier);
     }
@@ -41,8 +40,12 @@ public enum ModAdvancement {
         return server.getAdvancementLoader().get(identifier);
     }
 
-    @Override
-    public String toString() {
-        return displayName + " (" + identifier + ")";
+    public static AdvancementEntry getAdvancement(MinecraftServer server, String dex) {
+        for (ModAdvancement modAdv : values()) {
+            if (modAdv.key.equalsIgnoreCase(dex)) {
+                return modAdv.getAdvancement(server);
+            }
+        }
+        return null;
     }
 }

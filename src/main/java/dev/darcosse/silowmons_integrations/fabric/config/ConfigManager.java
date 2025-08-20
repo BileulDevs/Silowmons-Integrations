@@ -29,7 +29,6 @@ public class ConfigManager {
             try (FileReader reader = new FileReader(configFile)) {
                 config = GSON.fromJson(reader, SilowmonsIntegrationsConfig.class);
 
-                // Vérifier si la configuration des scoreboards est valide
                 if (config.scoreboardConfig == null) {
                     config.scoreboardConfig = new ScoreboardConfig();
                 }
@@ -72,8 +71,6 @@ public class ConfigManager {
         loadConfig();
     }
 
-    // ========== MÉTHODES POUR LES SCOREBOARDS ==========
-
     /**
      * Obtient tous les objectifs de scoreboard configurés
      */
@@ -83,42 +80,6 @@ public class ConfigManager {
             return new ArrayList<>();
         }
         return config.scoreboardConfig.objectives;
-    }
-
-    /**
-     * Trouve un objectif par son nom
-     */
-    public static ScoreboardObjective findObjectiveByName(String name) {
-        return getObjectives().stream()
-                .filter(obj -> obj.getName().equals(name))
-                .findFirst()
-                .orElse(null);
-    }
-
-    /**
-     * Ajoute un nouvel objectif
-     */
-    public static void addObjective(ScoreboardObjective objective) {
-        if (config == null) loadConfig();
-        if (config.scoreboardConfig == null) {
-            config.scoreboardConfig = new ScoreboardConfig();
-        }
-        config.scoreboardConfig.objectives.add(objective);
-        saveConfig();
-    }
-
-    /**
-     * Supprime un objectif par son nom
-     */
-    public static boolean removeObjective(String name) {
-        if (config == null) loadConfig();
-        if (config.scoreboardConfig == null) return false;
-
-        boolean removed = config.scoreboardConfig.objectives.removeIf(obj -> obj.getName().equals(name));
-        if (removed) {
-            saveConfig();
-        }
-        return removed;
     }
 
     /**
@@ -135,5 +96,16 @@ public class ConfigManager {
     public static boolean isScoreboardHologramsEnabled() {
         if (config == null) loadConfig();
         return config.enableScoreboardHolograms;
+    }
+
+    /**
+     * Obtient tous les Trainers de la BattleTower configurés
+     */
+    public static List<BattleTowerTrainer> getBattleTowerTrainers() {
+        if (config == null) loadConfig();
+        if (config.battleTowerConfig == null || config.battleTowerConfig.trainers == null) {
+            return new ArrayList<>();
+        }
+        return config.battleTowerConfig.trainers;
     }
 }

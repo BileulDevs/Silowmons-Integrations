@@ -15,12 +15,11 @@ public class SilowmonsIntegrations implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing Silowmons Integrations");
-
         ConfigManager.loadConfig();
+
 
         ModCommands.register();
         TickManager.register();
-
         LOGGER.info("Initialized Silowmons Integrations");
     }
 }

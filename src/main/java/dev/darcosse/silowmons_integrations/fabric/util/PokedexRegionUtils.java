@@ -9,8 +9,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 public class PokedexRegionUtils {
-
-    // Fonction principale pour vérifier si une région est complétée
     public static boolean isRegionCompleted(ServerPlayerEntity player, String region) {
         PokedexManager pokedexData = Cobblemon.INSTANCE.getPlayerDataManager()
                 .getPokedexData(player.getUuid());
@@ -77,6 +75,7 @@ public class PokedexRegionUtils {
             case "alola" -> new int[]{722, 809};
             case "galar" -> new int[]{810, 898};
             case "paldea" -> new int[]{899, 1025};
+            case "national" -> new int[]{1, 1025};
             default -> null;
         };
     }
@@ -162,7 +161,7 @@ public class PokedexRegionUtils {
     }
 
     public static void checkAllRegionsProgress(ServerPlayerEntity player) {
-        String[] regions = {"kanto", "johto", "hoenn", "sinnoh", "unova", "kalos", "alola", "galar", "paldea"};
+        String[] regions = {"kanto", "johto", "hoenn", "sinnoh", "unova", "kalos", "alola", "galar", "paldea", "national"};
 
         player.sendMessage(Text.literal("§6=== Progression Pokédex ==="));
 

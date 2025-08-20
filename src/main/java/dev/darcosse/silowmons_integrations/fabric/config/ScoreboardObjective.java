@@ -10,7 +10,6 @@ public class ScoreboardObjective {
     public String displayName;
     public Vec3d position;
 
-    // Constructeur par défaut pour GSON
     public ScoreboardObjective() {}
 
     public ScoreboardObjective(String name, String displayName, Vec3d position) {
