@@ -33,7 +33,7 @@ public class ModCommands {
         dispatcher.register(CommandManager.literal("battletowertrainer")
                 .then(CommandManager.literal("random")
                         .requires(source -> source.hasPermissionLevel(2))
-                        .executes(TrainerUtils::summonTrainer)
+                        .executes(TrainerUtils::summonTrainerByCommand)
                 )
         );
 

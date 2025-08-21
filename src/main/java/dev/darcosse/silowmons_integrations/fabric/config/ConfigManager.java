@@ -108,4 +108,15 @@ public class ConfigManager {
         }
         return config.battleTowerConfig.trainers;
     }
+
+    /**
+     * Obtient tous les Trainers de la BattleTower configurés
+     */
+    public static List<BattleTowerArena> getBattleTowerArenas() {
+        if (config == null) loadConfig();
+        if (config.battleTowerConfig == null || config.battleTowerConfig.arenas == null) {
+            return new ArrayList<>();
+        }
+        return config.battleTowerConfig.arenas;
+    }
 }

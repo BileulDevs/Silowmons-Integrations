@@ -22,5 +22,6 @@
   "advancement.silowmons_integrations.completed_paldea_dex.title": "Paldea Pokédex",
   "advancement.silowmons_integrations.completed_paldea_dex.description": "Catch all Pokémon in the Paldea Pokédex",
   "advancement.silowmons_integrations.completed_national_dex.title": "National Pokédex",
-  "advancement.silowmons_integrations.completed_national_dex.description": "Catch all Pokémon in the National Pokédex"
+  "advancement.silowmons_integrations.completed_national_dex.description": "Catch all Pokémon in the National Pokédex",
+  "item.silowmons_integrations.battle_tower_coin": "Battle Tower Coin"
 }

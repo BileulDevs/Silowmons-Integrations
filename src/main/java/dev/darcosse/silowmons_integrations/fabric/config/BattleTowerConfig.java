@@ -1,5 +1,7 @@
 package dev.darcosse.silowmons_integrations.fabric.config;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,14 +11,24 @@ import java.util.List;
  */
 public class BattleTowerConfig {
     public List<BattleTowerTrainer> trainers = new ArrayList<>();
+    public List<BattleTowerArena> arenas = new ArrayList<>();
 
     public BattleTowerConfig() {
         trainers = Arrays.asList(
                 new BattleTowerTrainer(
-                        "catch_count"
+                        "test"
                 ),
                 new BattleTowerTrainer(
-                        "registered"
+                        "test1"
+                )
+        );
+
+        arenas = Arrays.asList(
+                new BattleTowerArena(
+                        1,
+                        new BlockPos(175, -61, 285),
+                        new BlockPos(180, -61, 285),
+                        false
                 )
         );
     }
