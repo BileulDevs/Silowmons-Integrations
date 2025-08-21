@@ -7,9 +7,11 @@ import dev.darcosse.silowmons_integrations.fabric.config.BattleTowerArena;
 import dev.darcosse.silowmons_integrations.fabric.config.BattleTowerTrainer;
 import dev.darcosse.silowmons_integrations.fabric.config.ConfigManager;
 import dev.darcosse.silowmons_integrations.fabric.registry.BattleTowerRegistry;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -31,18 +33,36 @@ public class TrainerUtils {
         World world = player.getWorld();
 
         var trainer = TrainerMob.getEntityType().create(world);
-        trainer.setPos(arena.trainerSpawnPos.getX(), arena.trainerSpawnPos.getY() + 2, arena.trainerSpawnPos.getZ());
+        trainer.setPos(arena.trainerSpawnPos.getX(), arena.trainerSpawnPos.getY() + 1, arena.trainerSpawnPos.getZ());
         trainer.setTrainerId(getRandomTrainer());
         trainer.setPersistent(true);
+
+        double dx = player.getX() - trainer.getX();
+        double dz = player.getZ() - trainer.getZ();
+        float yaw = (float)(MathHelper.atan2(dz, dx) * (180D / Math.PI)) - 90F;
+
+        double dy = (player.getEyeY() - trainer.getEyeY());
+        double dist = Math.sqrt(dx * dx + dz * dz);
+        float pitch = (float)(-(MathHelper.atan2(dy, dist) * (180D / Math.PI)));
+
+        trainer.setYaw(yaw);
+        trainer.setHeadYaw(yaw);
+        trainer.setBodyYaw(yaw);
+        trainer.setPitch(pitch);
+
+        NbtCompound nbt = new NbtCompound();
+        trainer.writeNbt(nbt);
+        nbt.putBoolean("NoAI", true);
+        trainer.readNbt(nbt);
 
         world.spawnEntity(trainer);
 
         RCTMod.getInstance().getTrainerSpawner().register(trainer);
 
         arena.isOccupied = true;
-
         BattleTowerRegistry.addTrainer(trainer.getUuid(), arena);
     }
+
 
     public static void removeTrainer(ServerWorld world, UUID trainerUUID, BattleTowerArena arena) {
         var trainer = world.getEntity(trainerUUID);
