@@ -22,5 +22,6 @@
   "advancement.silowmons_integrations.completed_paldea_dex.title": "Pokédex de Paldea",
   "advancement.silowmons_integrations.completed_paldea_dex.description": "Attrapez tous les Pokémon du Pokédex de Paldea",
   "advancement.silowmons_integrations.completed_national_dex.title": "Pokédex National",
-  "advancement.silowmons_integrations.completed_national_dex.description": "Attrapez tous les Pokémon du Pokédex National"
+  "advancement.silowmons_integrations.completed_national_dex.description": "Attrapez tous les Pokémon du Pokédex National",
+  "item.silowmons_integrations.battle_tower_coin": "Jeton de la Tour Combat"
 }
