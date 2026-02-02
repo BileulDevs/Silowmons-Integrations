@@ -97,26 +97,4 @@ public class ConfigManager {
         if (config == null) loadConfig();
         return config.enableScoreboardHolograms;
     }
-
-    /**
-     * Obtient tous les Trainers de la BattleTower configurés
-     */
-    public static List<BattleTowerTrainer> getBattleTowerTrainers() {
-        if (config == null) loadConfig();
-        if (config.battleTowerConfig == null || config.battleTowerConfig.trainers == null) {
-            return new ArrayList<>();
-        }
-        return config.battleTowerConfig.trainers;
-    }
-
-    /**
-     * Obtient tous les Trainers de la BattleTower configurés
-     */
-    public static List<BattleTowerArena> getBattleTowerArenas() {
-        if (config == null) loadConfig();
-        if (config.battleTowerConfig == null || config.battleTowerConfig.arenas == null) {
-            return new ArrayList<>();
-        }
-        return config.battleTowerConfig.arenas;
-    }
 }

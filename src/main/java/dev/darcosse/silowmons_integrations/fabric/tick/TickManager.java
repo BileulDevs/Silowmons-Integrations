@@ -18,9 +18,6 @@ public class TickManager {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             tickCounter++;
 
-            HandleAdvancement.checkAdvancements(server);
-
-            // Tout ce qu'il y a en dessous du return, sera lancé une fois tous les CHECK_INTERVAL
             if (tickCounter % CHECK_INTERVAL != 0) {
                 return;
             }

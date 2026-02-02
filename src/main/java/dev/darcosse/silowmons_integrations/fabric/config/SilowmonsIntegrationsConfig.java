@@ -6,8 +6,6 @@ package dev.darcosse.silowmons_integrations.fabric.config;
 public class SilowmonsIntegrationsConfig {
     public ScoreboardConfig scoreboardConfig = new ScoreboardConfig();
 
-    public BattleTowerConfig battleTowerConfig = new BattleTowerConfig();
-
-    public int scoreboardRefreshInterval = 1200; // En ticks
+    public int scoreboardRefreshInterval = 1200;
     public boolean enableScoreboardHolograms = true;
 }
