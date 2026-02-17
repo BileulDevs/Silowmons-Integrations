@@ -38,9 +38,10 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:0.116.7+1.21.1")
     modImplementation("net.fabricmc:fabric-language-kotlin:1.13.6+kotlin.2.2.20")
 
-    modImplementation("com.cobblemon:fabric:1.7.1+1.21.1")
+    //modImplementation("com.cobblemon:fabric:1.7.1+1.21.1")
 
     modImplementation(files("libs/academy-mc1.21.1-v2.2.0+build.532-fabric.jar"))
+    modImplementation(files("libs/Abes-Hutts-Cobblemon-1.21.1-1.7.1-1.0.2.jar"))
 
     implementation("com.madgag:animated-gif-lib:1.4")
     modImplementation("software.bernie.geckolib:geckolib-fabric-1.21.1:4.7")

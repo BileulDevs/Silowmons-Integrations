@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MixinInGameHud {
 
     @Shadow @Final private MinecraftClient client;
-    @Unique private static final Identifier SAFARI_ICON = Identifier.of("staracademy", "textures/gui/safari_timer.png");
+    @Unique private static final Identifier SAFARI_ICON = Identifier.of("academy", "textures/gui/safari_timer.png");
 
     @Inject(method = "render", at = @At("TAIL"))
     private void renderSafariHUD(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {

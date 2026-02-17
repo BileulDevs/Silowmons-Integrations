@@ -3,7 +3,8 @@
   "package": "dev.darcosse.silowmons_integrations.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinUpdateSafariS2CPacket"
+    "MixinUpdateSafariS2CPacket",
+    "MixinMegaStoneUtils"
   ],
   "client": [
     "MixinInGameHud",

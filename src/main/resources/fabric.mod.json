@@ -13,6 +13,9 @@
   "entrypoints": {
     "main": [
       "dev.darcosse.silowmons_integrations.fabric.SilowmonsIntegrations"
+    ],
+    "client": [
+      "dev.darcosse.silowmons_integrations.fabric.client.SilowmonsIntegrationsClient"
     ]
   },
   "mixins": [
