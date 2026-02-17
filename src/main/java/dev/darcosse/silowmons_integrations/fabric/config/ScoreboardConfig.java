@@ -14,7 +14,7 @@ public class ScoreboardConfig {
     public ScoreboardConfig() {
         objectives = Arrays.asList(
                 new ScoreboardObjective(
-                        "catch_count",
+                        "captured",
                         "\uD83D\uDC51 Pokémon Capturés \uD83D\uDC51",
                         new Vec3d(0, -60, 0)
                 ),

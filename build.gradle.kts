@@ -40,6 +40,11 @@ dependencies {
 
     modImplementation("com.cobblemon:fabric:1.7.1+1.21.1")
 
+    modImplementation(files("libs/academy-mc1.21.1-v2.2.0+build.532-fabric.jar"))
+
+    implementation("com.madgag:animated-gif-lib:1.4")
+    modImplementation("software.bernie.geckolib:geckolib-fabric-1.21.1:4.7")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 }

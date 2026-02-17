@@ -40,7 +40,7 @@ public class TickManager {
 
         List<ArmorStandEntity> toRemove = server.getOverworld().getEntitiesByClass(
                 ArmorStandEntity.class,
-                new Box(-30000000, -64, -30000000, 30000000, 320, 30000000), // scan tout le monde
+                new Box(-30000000, -64, -30000000, 30000000, 320, 30000000),
                 entity -> entity.isInvisible() && entity.hasNoGravity() && !entity.shouldShowArms()
         );
         toRemove.forEach(Entity::discard);

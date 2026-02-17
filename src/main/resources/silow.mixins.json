@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "dev.darcosse.silowmons_integrations.fabric.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinUpdateSafariS2CPacket"
+  ],
+  "client": [
+    "MixinInGameHud",
+    "MixinClientPlayerEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

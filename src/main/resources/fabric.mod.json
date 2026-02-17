@@ -15,6 +15,9 @@
       "dev.darcosse.silowmons_integrations.fabric.SilowmonsIntegrations"
     ]
   },
+  "mixins": [
+    "silow.mixins.json"
+  ],
   "depends": {
     "minecraft": "1.21.1",
     "cobblemon": ">=1.7.1"
